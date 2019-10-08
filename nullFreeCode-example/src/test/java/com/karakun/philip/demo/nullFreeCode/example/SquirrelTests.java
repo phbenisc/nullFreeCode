@@ -53,17 +53,21 @@ public class SquirrelTests {
 
     @Test
     void createFamilySquirrel() {
-        Squirrel squirrel = ImmutableSquirrel.builder()
+
+        ImmutableSquirrel father = ImmutableSquirrel.builder()
                 .gender(Gender.MALE)
-                .father(ImmutableSquirrel.builder()
-                        .gender(Gender.MALE)
-                        .build()
-                )
+                .build();
+
+        ImmutableSquirrel squirrel = ImmutableSquirrel.builder()
+                .gender(Gender.MALE)
+                .father(father)
                 .mother(ImmutableSquirrel.builder()
                         .gender(Gender.FEMALE)
                         .build()
                 )
                 .build();
+
+        squirrel = squirrel.withFather(father.withPreferredFood(Food.KEBAB));
 
         assertNotNull(squirrel);
     }
