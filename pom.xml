@@ -21,7 +21,7 @@
         <google.guava.version>28.1-jre</google.guava.version>
         <immutables.value.version>2.7.4</immutables.value.version>
         <junit.jupiter.version>5.5.0</junit.jupiter.version>
-        <fasterxml.jackson>2.9.10</fasterxml.jackson>
+        <fasterxml.jackson>2.10.1</fasterxml.jackson>
     </properties>
 
     <build>
